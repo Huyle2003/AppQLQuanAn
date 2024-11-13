@@ -1,5 +1,6 @@
 package com.example.appqlquanan;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -29,26 +30,41 @@ public class trangchu extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarTrangchu.toolbar);
-        binding.appBarTrangchu.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .setAnchorView(R.id.fab).show();
-            }
-        });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_thongke, R.id.nav_banan, R.id.nav_thucdon)
+                R.id.nav_home, R.id.nav_thongke, R.id.nav_banan, R.id.nav_thucdon,R.id.nav_nhanvien,R.id.nav_luong, R.id.nav_logout)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_trangchu);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
+        // Thêm OnDestinationChangedListener để cập nhật tiêu đề trên toolbar
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            if (destination.getId() == R.id.nav_thucdon) {
+                getSupportActionBar().setTitle("Thực đơn");
+            } else if (destination.getId() == R.id.nav_home) {
+                getSupportActionBar().setTitle("Trang chủ");
+            } else if (destination.getId() == R.id.nav_thongke) {
+                getSupportActionBar().setTitle("Thống kê");
+            } else if (destination.getId() == R.id.nav_banan) {
+                getSupportActionBar().setTitle("Bàn ăn");
+            } else if (destination.getId() == R.id.nav_nhanvien) {
+            getSupportActionBar().setTitle("Nhân viên");
+            }else if (destination.getId() == R.id.nav_luong) {
+                getSupportActionBar().setTitle("Nhân viên");
+            }
+        });
+
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -23,8 +23,23 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
-        android:id="@+id/thucdonFragment2"
+        android:id="@+id/nav_thucdon"
         android:name="com.example.appqlquanan.ui.thucdon.thucdonFragment"
         android:label="fragment_thucdon"
         tools:layout="@layout/fragment_thucdon" />
+    <fragment
+        android:id="@+id/nav_nhanvien"
+        android:name="com.example.appqlquanan.ui.nhanvien.NhanvienFragment"
+        android:label="fragment_nhanvien"
+        tools:layout="@layout/fragment_nhanvien" />
+    <fragment
+        android:id="@+id/nav_luong"
+        android:name="com.example.appqlquanan.ui.nhanvien.LuongFragment"
+        android:label="fragment_luong"
+        tools:layout="@layout/fragment_luong" />
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.example.appqlquanan.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,8 +28,16 @@ public class MainActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(MainActivity.this, trangchu.class);
-                startActivities(new Intent[]{myIntent});
+                String user = edittk.getText().toString();
+                String pass = editpass.getText().toString();
+                if(user.equals("admin") && pass.equals("1")){
+                    Toast.makeText(MainActivity.this,"Chúc mừng, bạn đã đăng nhập thành công", Toast.LENGTH_LONG).show();
+                    Intent myIntent = new Intent(MainActivity.this, trangchu.class);
+                    startActivities(new Intent[]{myIntent});
+
+                }else{
+                    Toast.makeText(MainActivity.this,"Đăng nhập thất bại", Toast.LENGTH_LONG).show();
+                }
             }
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
