@@ -12,7 +12,8 @@
     <string name="menu_gallery">Thống kê</string>
     <string name="menu_slideshow">Bàn</string>
     <string name="menu_thucdon">Thực đơn </string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="menu_nhanvien">Nhân viên </string>
+    <string name="menu_luong">Lương </string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

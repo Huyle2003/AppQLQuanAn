@@ -20,5 +20,17 @@
             android:id="@+id/nav_thucdon"
             android:icon="@drawable/menu"
             android:title="Thực đơn" />
+        <item
+            android:id="@+id/nav_nhanvien"
+            android:icon="@drawable/user"
+            android:title="Nhân viên" />
+        <item
+            android:id="@+id/nav_luong"
+            android:icon="@drawable/user"
+            android:title="Lương" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/log"
+            android:title="Đăng xuất" />
     </group>
 </menu>
